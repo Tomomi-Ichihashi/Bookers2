@@ -1,2 +1,12 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class = "book-detail">
+  <h1>Book detail</h1>
+  <table class = "table">
+    <tr>
+      <tb><%= attachment_image_tag @user, :profile_image %><br /><%= @user.name %></tb>
+      <tb><%= @book.title %></tb>
+      <tb><%= @book.body %></tb>
+      
+    </tr>
+  </table>
+</div>
+

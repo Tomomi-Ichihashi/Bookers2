@@ -1,6 +1,4 @@
 <div class ="user-info">
-
- 
  <h1>User info</h1>
    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
    <table class = "table">
@@ -15,13 +13,10 @@
    </table>
    <span><%= link_to 'Edit',  edit_book_path(@user.id) %></span>
  </div>
-
-
 </div>
 
 
 <div class ="new-book">
-    
   <h1>New Book</h1>    
   <%= form_with model:@book, local:true do |f| %>
   
@@ -29,12 +24,38 @@
   <%= f.text_field :title %>
   
   <h4>Opinon</h4>
-  <%= f.text_field :body %>
+  <%= f.text_area :body %>
   
   <%= f.submit 'Create Book' %>
   
   <% end %>
-  
-  
 </div>
+
+<div class ="books-lists">
+  
+  <h1>Books</h1>
+  <table class = "table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+      <tr>
+        
+        <th><%= @user.profile_image %></th>
+        <th><%= link_to book.title,"/books/#{book.id}" %></th>
+        <th><%= book.body %></th>
+       
+      </tr>
+        <% end %> 
+    </tbody>
+  </table>
+</div>
+
+
+
 
