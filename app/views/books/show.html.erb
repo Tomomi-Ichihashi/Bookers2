@@ -1,8 +1,13 @@
+<% if flash[:notice] %>
+ <p calass = "notice"><%= flash[:notice] %></p>
+<% end %>
+
+
 <div class = "book-detail">
   <h1>Book detail</h1>
   <table class = "table">
     <tr>
-      <tb><%= attachment_image_tag @user, :profile_image %><br /><%= @user.name %></tb>
+      <tb><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %><br /><%= @user.name %></tb>
       <tb><%= @book.title %></tb>
       <tb><%= @book.body %></tb>
       <tb><%= link_to 'Edit',  edit_book_path(@book.id) %></tb>
