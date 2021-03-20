@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @book = Book.new
+    @newbook = Book.new
     @books = Book.all
     @user = current_user
   end
@@ -21,8 +21,8 @@ class BooksController < ApplicationController
     
   end
   
-  
   def show
+    @newbook = Book.new
     @book = Book.find(params[:id])
     @user = User.find(@book.user_id)
   end
