@@ -1,43 +1,9 @@
-<% if flash[:notice] %>
- <p class = "notice">
-   <%= flash[:notice] %>
- </p>
+<% if flash[:notice2] %>
+ <p class = "notice"><%= flash[:notice2] %> </p>
 <% end %>
 
-<!--コピー-->
-<div class ="user-info">
- <h1>User info</h1>
-   <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-   <table class = "table">
-     <tr>
-       <th>name</th>
-       <th><%= @user.name %></th>
-     </tr>
-     <tr>
-       <th>introduction</th>
-       <th><%= @user. introduciton%></th>
-     </tr>
-   </table>
-   <span><%= link_to 'Edit',  edit_user_path(@user.id) %></span>
- </div>
-</div>
+<%= render 'books/user_info', user:@user, book:@book %>
 
-
-<div class ="new-book">
-  <h1>New Book</h1>    
-  <%= form_with model:@book, local:true do |f| %>
-  
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  
-  <h4>Opinon</h4>
-  <%= f.text_area :body %>
-  
-  <%= f.submit 'Create Book' %>
-  
-  <% end %>
-</div>
-<!--コピー-->
 <div class ="book-lists">
   
   <h1>Books</h1>

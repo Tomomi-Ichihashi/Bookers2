@@ -1,7 +1,8 @@
-<% if flash[:notice] %>
- <p calass = "notice"><%= flash[:notice] %></p>
+<% if flash[:notice1] %>
+ <p calass = "notice"><%= flash[:notice1] %></p>
 <% end %>
 
+<%= render 'books/user_info', user:@user, book:@book %>
 
 <div class = "book-detail">
   <h1>Book detail</h1>
@@ -17,3 +18,5 @@
     </tr>
   </table>
 </div>
+
+
