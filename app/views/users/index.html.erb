@@ -1,11 +1,12 @@
-
-<div class ="user-lists">
+<div class = "container">
+<div class = "row">
   
   <%= render 'books/user_info', user:@user, book:@newbook %>
   
   
+  <div class ="col-8">  
   <h1>Users</h1>
-  <table class = "table">
+  <table class = "table table-condensed">
     <thead>
       <tr>
         <th>image</th>
@@ -16,7 +17,7 @@
     <tbody>
       <% @users.each do |user| %>
       <tr>
-        <th><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></th>
+        <th><%= attachment_image_tag user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg"%></th>
         <th><%= user.name %></th>
         <th><%= link_to 'Show', user_path(user.id) %></th>
       </tr>
@@ -25,4 +26,5 @@
   </table>
 </div>
 
-
+</div>
+</div>

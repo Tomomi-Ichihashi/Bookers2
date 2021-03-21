@@ -88,11 +88,13 @@
    </header>
    
    <main class = "mb-auto">
-   <% if flash[:notice] %>
-   <p class = "notice"><%= flash[:notice] %></p>
-  <% end %>
-
+    
+    <% if flash[:notice] %>
+     <p class = "notice"><%= flash[:notice] %></p>
+    <% end %>
+    
     <%= yield %>
+    
    </main>
    
    <footer>
